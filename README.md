@@ -1,4 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Nave.rs test frontend
+
+## Techs
+
+- HTML5
+- CSS3
+- ReactJs
+- Typescript
+
+## Libs
+
+- Styled-Components
+- React-Router
+- Axios
+
+## Lint tools
+
+- Eslint
+- Lint-staged
+- Husky
+- Git-commit-msg-linter
 
 ## Available Scripts
 
