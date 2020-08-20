@@ -10,7 +10,7 @@ interface Props {
 const Field: React.FC<Props> = ({ label, name }: Props) => (
   <Container>
     <label htmlFor={label}>{label}</label>
-    <input type="text" name={name} placeholder={label} />
+    <input type={name === 'password' ? 'password' : 'text'} name={name} placeholder={label} />
   </Container>
 );
 
