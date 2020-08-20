@@ -11,6 +11,7 @@
 
 - Styled-Components
 - React-Router
+- React-Hook-Form
 - Axios
 
 ## Lint tools
