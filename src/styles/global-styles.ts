@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
   html, body {
     margin: 0;
     padding: 0;
@@ -8,12 +10,11 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: var(--layout-background-color);
+    background-color: var(--secondary-color);
+    font-family: 'Montserrat', sans-serif;
   }
 
   :root {
-    --layout-background-color: #E5E5E5;
-
     --primary-color: #212121;
     --secondary-color: #FFFFFF;
 
