@@ -6,7 +6,7 @@ export const Logo = styled.img.attrs({
 })`
 `;
 
-export const Button = styled.button`
+export const Button = styled.input`
   height: 40px;
   font-weight: 600px;
   font-size: var(--normal-font-size);
