@@ -12,7 +12,7 @@ import {
   FormFieldArea,
   FormButton,
 } from './styles';
-import { Input, Label } from '../../styles/global-elements';
+import { Input, Label, AlertMsg } from '../../styles/global-elements';
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -41,7 +41,7 @@ const Login: React.FC = () => {
     <Container>
       <Card onSubmit={handleSubmit(onSubmit)}>
         <FormLogo height={50} />
-        {invalidCredentials && <span>E-mail e/ou senha incorretos!!!</span>}
+        {invalidCredentials && <AlertMsg center="center">E-mail e/ou senha incorretos!!!</AlertMsg>}
         <FormFieldArea>
           <Label htmlFor="email">E-mail</Label>
           <Input
@@ -50,7 +50,7 @@ const Login: React.FC = () => {
             placeholder="E-mail"
             ref={register({ required: 'Campo obrigatório!!!' })}
           />
-          {errors.email && <span>{errors.email.message}</span>}
+          {errors.email && <AlertMsg>{errors.email.message}</AlertMsg>}
         </FormFieldArea>
         <FormFieldArea>
           <Label htmlFor="password">Senha</Label>
@@ -60,7 +60,7 @@ const Login: React.FC = () => {
             placeholder="Senha"
             ref={register({ required: 'Campo obrigatório!!!', minLength: 6 })}
           />
-          {errors.password && <span>{errors.password.message}</span>}
+          {errors.password && <AlertMsg>{errors.password.message}</AlertMsg>}
         </FormFieldArea>
         <FormButton type="submit" value="Entrar" />
       </Card>
