@@ -32,6 +32,8 @@ export const FormFieldArea = styled(FieldArea)`
 
 export const FormButton = styled(Button)`
   width: 100%;
+  height: 40px;
+  font-size: var(--normal-font-size);
   color: var(--secondary-color);
   background-color: var(--primary-color);
 `;

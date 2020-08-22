@@ -40,11 +40,16 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.input`
-  height: 40px;
+  height: 25px;
   font-weight: 600px;
-  font-size: var(--normal-font-size);
+  font-size: var(--extra-small-font-size);
   border: 1px solid var(--primary-color);
   cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    height: 40px;
+    font-size: var(--normal-font-size);
+  }
 `;
 
 export const AlertMsg = styled.span<Alert>`
