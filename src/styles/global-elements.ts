@@ -4,7 +4,7 @@ type Alert = {
   center?: string,
 };
 
-export const Logo = styled.img.attrs({
+export const GlobalLogo = styled.img.attrs({
   src: 'assets/images/logo-and-name.png',
   alt: 'Navers Logo',
 })`

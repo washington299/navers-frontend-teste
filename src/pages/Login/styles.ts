@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Logo, Button, FieldArea } from '../../styles/global-elements';
+import { GlobalLogo, Button, FieldArea } from '../../styles/global-elements';
 
 export const Container = styled.section`
   display: flex;
@@ -17,7 +17,7 @@ export const Card = styled.form`
   text-align: center;
 `;
 
-export const FormLogo = styled(Logo)`
+export const Logo = styled(GlobalLogo)`
   height: 50px;
   margin-bottom: 40px;
 

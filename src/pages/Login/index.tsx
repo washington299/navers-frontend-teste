@@ -8,7 +8,7 @@ import { useCredentialsDispatch } from '../../contexts/credentials';
 import {
   Container,
   Card,
-  FormLogo,
+  Logo,
   FormFieldArea,
   FormButton,
 } from './styles';
@@ -40,7 +40,7 @@ const Login: React.FC = () => {
   return (
     <Container>
       <Card onSubmit={handleSubmit(onSubmit)}>
-        <FormLogo height={50} />
+        <Logo height={50} />
         {invalidCredentials && <AlertMsg center="center">E-mail e/ou senha incorretos!!!</AlertMsg>}
         <FormFieldArea>
           <Label htmlFor="email">E-mail</Label>
