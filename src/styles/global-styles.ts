@@ -18,9 +18,11 @@ export default createGlobalStyle`
     --primary-color: #212121;
     --secondary-color: #FFFFFF;
 
+    --extra-small-font-size: 12px;
     --small-font-size: 14px;
     --normal-font-size: 16px;
     --big-font-size: 24px;
+    --large-font-size: 28px;
     --extra-big-font-size: 40px;
   }
 `;
