@@ -31,3 +31,9 @@ export const AddButton = styled(Button)`
   color: var(--secondary-color);
   text-align: center;
 `;
+
+export const Main = styled.section`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-gap: 20px;
+`;
