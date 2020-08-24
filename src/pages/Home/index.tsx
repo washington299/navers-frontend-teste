@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 import { INaver } from '../../interfaces';
+
 import { useCredentialsState } from '../../contexts/credentials';
 
 import Header from '../../components/Header';
@@ -25,10 +26,10 @@ const Home: React.FC = () => {
     function getNavers() {
       api.get('/navers?', { headers: { Authorization: `Bearer ${token}` } })
         .then((res) => setNavers(res.data))
-        .catch(() => {});
+        .catch(() => history.push('/'));
     }
     getNavers();
-  });
+  }, []);
 
   return (
     <>
@@ -40,7 +41,7 @@ const Home: React.FC = () => {
         </Top>
         <Main>
           {navers.map((naver) => (
-            <Card naver={naver} />
+            <Card key={naver.id} naver={naver} />
           ))}
         </Main>
       </HomeStyles>

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { Button } from '../../styles/global-elements';
 
 export const HomeStyles = styled.section`
-  padding: 0 15px;
+  padding: 10px 15px;
 
   @media screen and (min-width: 768px) {
-    padding: 0 30px;
+    padding: 10px 30px;
   }
 `;
 
@@ -13,7 +13,7 @@ export const Top = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin-bottom: 20px;
 `;
 
 export const Title = styled.h1`
@@ -34,6 +34,6 @@ export const AddButton = styled(Button)`
 
 export const Main = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-gap: 20px;
 `;
