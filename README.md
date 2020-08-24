@@ -2,7 +2,6 @@
 
 ## Techs
 
-- HTML5
 - CSS3
 - ReactJs
 - Typescript
@@ -13,6 +12,7 @@
 - React-Router
 - React-Hook-Form
 - Axios
+- Material-UI icons
 
 ## Lint tools
 
