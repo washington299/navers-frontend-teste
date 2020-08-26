@@ -41,13 +41,17 @@ export const NaverData = styled.div`
   display: flex;
   flex-direction: column-reverse;
 
-  img {
-    width: 100%;
-    flex: 1;
-  }
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
+  }
+`;
+
+export const Picture = styled.div`
+  flex: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 `;
 

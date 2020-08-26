@@ -9,6 +9,7 @@ import {
   Job,
   Icons,
   InformationArea,
+  Picture,
   Title,
   SubTitle,
   Text,
@@ -34,7 +35,9 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
       {displayNaverDataBox && (
         <DarkBackground>
           <NaverData>
-            <img src={naver.url} alt={`${naver.name} - ${naver.job_role}`} />
+            <Picture>
+              <img src={naver.url} alt={`${naver.name} - ${naver.job_role}`} />
+            </Picture>
             <InformationArea>
               <span className="close-button">
                 <Close onClick={() => setDisplayNaverDataBox(false)} />
