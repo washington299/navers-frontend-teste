@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import api from '../../services/api';
 import { INaver } from '../../interfaces';
@@ -25,8 +25,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     function getNavers() {
       api.get('/navers?', { headers: { Authorization: `Bearer ${token}` } })
-        .then((res) => setNavers(res.data))
-        .catch(() => history.push('/'));
+        .then((res) => setNavers(res.data));
     }
     getNavers();
   }, []);
@@ -37,7 +36,9 @@ const Home: React.FC = () => {
       <HomeStyles>
         <Top>
           <Title>Navers</Title>
-          <AddButton defaultValue="Adicionar Naver" />
+          <Link to="/add">
+            <AddButton defaultValue="Adicionar Naver" readOnly />
+          </Link>
         </Top>
         <Main>
           {navers.map((naver) => (
