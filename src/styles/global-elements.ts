@@ -13,7 +13,6 @@ export const GlobalLogo = styled.img.attrs({
 export const FieldArea = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
 
   span {
     margin-top: 5px;

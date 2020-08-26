@@ -28,6 +28,7 @@ export const Logo = styled(GlobalLogo)`
 
 export const FormFieldArea = styled(FieldArea)`
   width: 100%;
+  margin-bottom: 40px;
 `;
 
 export const FormButton = styled(Button)`
