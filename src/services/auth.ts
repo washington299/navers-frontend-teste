@@ -1,12 +1,17 @@
 import api from '../services/api';
 
-export const isAuthenticated = async (token: string) => {
-  const res = await api.get('/navers', { headers: { Authorization: `Bearer ${token}` } });
-  const auth = res.data;
+// export const auth = {
+//   isAuthenticated: false,
+//   login: (email: string, password: string): Promise<boolean> => (
+//     api.post('/users/login', { email, password })
+//       .then(() => true)
+//       .catch(() => false)
+//   ),
+//   logout: () => {},
+// };
 
-  if (auth.statusCode === 401) {
-    return false;
-  }
-
-  return true;
-};
+export const isAuthenticated = async (token: string): Promise<boolean> => (
+  api.get('/navers', { headers: { Authorization: `Bearer ${token}` } })
+    .then(() => true)
+    .catch(() => false)
+);

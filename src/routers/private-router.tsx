@@ -15,29 +15,11 @@ const PrivateRoute: React.FC<Props> = ({ children, ...rest }: Props) => {
   return (
     <Route
       {...rest}
-      render={({ location }) => (isAuthenticated(token) ? (
-        children
-      ) : (
-        <Redirect
-          to={{
-            pathname: '/',
-            state: { from: location },
-          }}
-        />
-      ))}
+      render={() => (
+        isAuthenticated(token) ? (children) : (<Redirect to={{ pathname: '/' }} />)
+      )}
     />
-    // <Route {...rest} render={({ location }) =>
-    //   isAuthenticated(token) ? (
-    //     children
-    //   ) : (
-    //     <Redirect
-    //       to={{
-    //         pathname: '/',
-    //         state: { from: location },
-    //       }}
-    //     />
-    //   )
-    // />
   );
 };
+
 export default PrivateRoute;
