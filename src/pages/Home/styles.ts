@@ -30,10 +30,14 @@ export const AddButton = styled(Button)`
   background-color: var(--primary-color);
   color: var(--secondary-color);
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+  }
 `;
 
 export const Main = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 20px;
 `;

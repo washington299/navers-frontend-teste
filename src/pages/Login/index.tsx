@@ -62,7 +62,7 @@ const Login: React.FC = () => {
           />
           {errors.password && <AlertMsg>{errors.password.message}</AlertMsg>}
         </FormFieldArea>
-        <FormButton type="submit" value="Entrar" />
+        <FormButton type="submit">Entrar</FormButton>
       </Card>
     </Container>
   );

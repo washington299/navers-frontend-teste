@@ -37,7 +37,7 @@ const Home: React.FC = () => {
         <Top>
           <Title>Navers</Title>
           <Link to="/add">
-            <AddButton defaultValue="Adicionar Naver" readOnly />
+            <AddButton>Adicionar Naver</AddButton>
           </Link>
         </Top>
         <Main>
