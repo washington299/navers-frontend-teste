@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   img {
     width: 100%;
-    height: 280px;
+    height: 300px;
   }
 
   :hover {
@@ -36,7 +36,6 @@ export const Icons = styled.div`
 
 export const NaverData = styled.div`
   width: 80%;
-  height: auto;
   background-color: var(--secondary-color);
   display: flex;
   flex-direction: column-reverse;
@@ -47,11 +46,17 @@ export const NaverData = styled.div`
 `;
 
 export const Picture = styled.div`
-  flex: 1;
-
   img {
     width: 100%;
-    height: 100%;
+    height: 250px;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex: 1;
+
+    img {
+      height: 100%;
+    }
   }
 `;
 
