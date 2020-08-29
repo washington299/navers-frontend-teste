@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Edit, Delete, Close } from '@material-ui/icons';
 
 import { INaver } from '../../interfaces';
+import { calculate_age, calculate_admission_date } from '../../helpers/date-calculate';
 
 import {
   Container,
@@ -45,9 +46,9 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
               <Title>{naver.name}</Title>
               <Text>{naver.job_role}</Text>
               <SubTitle>Idade</SubTitle>
-              <Text>{naver.birthdate}</Text>
+              <Text>{`${calculate_age(naver.birthdate)} anos.`}</Text>
               <SubTitle>Tempo de empresa</SubTitle>
-              <Text>{naver.admission_date}</Text>
+              <Text>{`Desde: ${calculate_admission_date(naver.admission_date)}.`}</Text>
               <SubTitle>Projetos que ja participou</SubTitle>
               <Text>{naver.project}</Text>
             </InformationArea>
