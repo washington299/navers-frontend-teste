@@ -14,3 +14,12 @@ export function calculate_admission_date(date: string) {
 
   return result;
 }
+
+export function convert_date_to_brazilian_format(date: string) {
+  const born_year = new Date(date).getUTCFullYear();
+  const born_month = new Date(date).getMonth();
+  const born_day = new Date(date).getDate();
+  const result = `${born_day + 1}/${born_month + 1}/${born_year}`;
+
+  return result;
+}
