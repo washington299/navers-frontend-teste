@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ArrowBackIos } from '@material-ui/icons';
 
 import api from '../../services/api';
+import { useCredentialsState } from '../../contexts/credentials';
+import { convert_date_to_brazilian_format } from '../../helpers/date-calculate';
 
 import Header from '../../components/Header';
 
@@ -13,10 +15,25 @@ import {
 import { Label, Input, AlertMsg } from '../../styles/global-elements';
 
 const AddNaver: React.FC = () => {
+  const history = useHistory();
   const { register, handleSubmit, errors } = useForm();
+  const { token } = useCredentialsState();
 
   function onSubmit(values: any) {
-    console.log(values);
+    const {
+      name, birthdate, project, job_role, admission_date, url,
+    } = values;
+
+    api.post('/navers', {
+      name,
+      birthdate: convert_date_to_brazilian_format(birthdate),
+      project,
+      job_role,
+      admission_date: convert_date_to_brazilian_format(admission_date),
+      url,
+    }, { headers: { Authorization: `Bearer ${token}` } })
+      .then((res) => console.log(res))
+      .catch(() => history.push('/'));
   }
 
   return (
