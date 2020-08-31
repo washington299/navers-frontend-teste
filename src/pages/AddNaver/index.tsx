@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { ArrowBackIos } from '@material-ui/icons';
+import { ArrowBackIos, Close } from '@material-ui/icons';
 
 import api from '../../services/api';
 import { useCredentialsState } from '../../contexts/credentials';
@@ -10,14 +10,25 @@ import { convert_date_to_brazilian_format } from '../../helpers/date-calculate';
 import Header from '../../components/Header';
 
 import {
-  Container, Content, Top, Title, Form, FormFieldArea, FormButton,
+  Container,
+  Content,
+  Top,
+  Title,
+  Form,
+  FormFieldArea,
+  FormButton,
+  ModalBox,
+  ModalTitle,
 } from './styles';
-import { Label, Input, AlertMsg } from '../../styles/global-elements';
+import {
+  Label, Input, AlertMsg, DarkBackground,
+} from '../../styles/global-elements';
 
 const AddNaver: React.FC = () => {
   const history = useHistory();
-  const { register, handleSubmit, errors } = useForm();
   const { token } = useCredentialsState();
+  const { register, handleSubmit, errors } = useForm();
+  const [addModal, setAddModal] = useState(false);
 
   function onSubmit(values: any) {
     const {
@@ -32,12 +43,28 @@ const AddNaver: React.FC = () => {
       admission_date: convert_date_to_brazilian_format(admission_date),
       url,
     }, { headers: { Authorization: `Bearer ${token}` } })
-      .then((res) => console.log(res))
+      .then(() => setAddModal(true))
       .catch(() => history.push('/'));
+  }
+
+  function handleCloseModal() {
+    setAddModal(false);
+    history.push('/navers');
   }
 
   return (
     <>
+      {addModal && (
+        <DarkBackground>
+          <ModalBox>
+            <span style={{ display: 'block', textAlign: 'end', cursor: 'pointer' }}>
+              <Close onClick={handleCloseModal} />
+            </span>
+            <ModalTitle>Naver criado</ModalTitle>
+            <span>Naver criado com sucesso!</span>
+          </ModalBox>
+        </DarkBackground>
+      )}
       <Header />
       <Container>
         <Content>
