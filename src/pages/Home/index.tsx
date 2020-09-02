@@ -19,16 +19,17 @@ import {
 
 const Home: React.FC = () => {
   const [navers, setNavers] = useState<INaver[]>([]);
-  const history = useHistory();
   const { token } = useCredentialsState();
+  const history = useHistory();
 
   useEffect(() => {
     function getNavers() {
       api.get('/navers?', { headers: { Authorization: `Bearer ${token}` } })
-        .then((res) => setNavers(res.data));
+        .then((res) => setNavers(res.data))
+        .catch(() => history.push('/'));
     }
     getNavers();
-  }, []);
+  });
 
   return (
     <>

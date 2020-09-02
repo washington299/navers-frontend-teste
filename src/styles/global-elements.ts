@@ -39,16 +39,14 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  height: 25px;
-  font-weight: 600px;
-  font-size: var(--extra-small-font-size);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
+  font-size: var(--normal-font-size);
+  font-weight: 600px;
+  height: 40px;
+  text-align: center;
   cursor: pointer;
-
-  @media screen and (min-width: 768px) {
-    height: 40px;
-    font-size: var(--normal-font-size);
-  }
 `;
 
 export const AlertMsg = styled.span<Alert>`

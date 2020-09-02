@@ -25,14 +25,14 @@ export const Title = styled.h1`
 `;
 
 export const AddButton = styled(Button)`
-  height: 25px;
-  font-size: var(--extra-small-font-size);
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-align: center;
+  width: 150px;
+  height: 30px;
+  font-size: var(--small-font-size);
 
   @media screen and (min-width: 768px) {
     width: 200px;
+    height: 40px;
+    font-size: var(--normal-font-size);
   }
 `;
 
