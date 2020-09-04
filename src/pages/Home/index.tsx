@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 
-import api from '../../services/api';
+import { GetAllNavers } from '../../services/api';
 import { INaver } from '../../interfaces';
 
 import { useCredentialsState } from '../../contexts/credentials';
@@ -23,10 +23,13 @@ const Home: React.FC = () => {
   const history = useHistory();
 
   useEffect(() => {
-    function getNavers() {
-      api.get('/navers?', { headers: { Authorization: `Bearer ${token}` } })
-        .then((res) => setNavers(res.data))
-        .catch(() => history.push('/'));
+    async function getNavers() {
+      const res = await GetAllNavers(token);
+      if (!res) {
+        history.push('/');
+        return;
+      }
+      setNavers(res);
     }
     getNavers();
   });
