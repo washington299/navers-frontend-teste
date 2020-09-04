@@ -21,7 +21,7 @@ import {
   ModalTitle,
 } from './styles';
 import {
-  Label, Input, AlertMsg, DarkBackground,
+  Label, Input, AlertMsg, Modal,
 } from '../../styles/global-elements';
 
 const AddNaver: React.FC = () => {
@@ -55,7 +55,7 @@ const AddNaver: React.FC = () => {
   return (
     <>
       {addModal && (
-        <DarkBackground>
+        <Modal>
           <ModalBox>
             <span style={{ display: 'block', textAlign: 'end', cursor: 'pointer' }}>
               <Close onClick={handleCloseModal} />
@@ -63,7 +63,7 @@ const AddNaver: React.FC = () => {
             <ModalTitle>Naver criado</ModalTitle>
             <span>Naver criado com sucesso!</span>
           </ModalBox>
-        </DarkBackground>
+        </Modal>
       )}
       <Header />
       <Container>
