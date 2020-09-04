@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-import api from '../../services/api';
+import { SignIn } from '../../services/api';
 import { useCredentialsDispatch } from '../../contexts/credentials';
 
 import {
@@ -16,25 +16,28 @@ import { Input, Label, AlertMsg } from '../../styles/global-elements';
 
 const Login: React.FC = () => {
   const history = useHistory();
-  const [invalidCredentials, setInvalidCredentials] = useState(false);
   const dispatch = useCredentialsDispatch();
   const { handleSubmit, register, errors } = useForm();
+  const [invalidCredentials, setInvalidCredentials] = useState(false);
 
   async function onSubmit(values: any) {
     const { email, password } = values;
-    api.post('/users/login', { email, password })
-      .then((res) => {
-        dispatch({
-          type: 'GET_USER_CREDENTIALS',
-          payload: {
-            id: res.data.id,
-            email: res.data.email,
-            token: res.data.token,
-          },
-        });
-        history.push('/navers');
-      })
-      .catch(() => setInvalidCredentials(true));
+    const naver = await SignIn(email, password);
+
+    if (!naver) {
+      setInvalidCredentials(true);
+      return;
+    }
+
+    dispatch({
+      type: 'GET_USER_CREDENTIALS',
+      payload: {
+        id: naver.id,
+        email: naver.email,
+        token: naver.token,
+      },
+    });
+    history.push('/navers');
   }
 
   return (
