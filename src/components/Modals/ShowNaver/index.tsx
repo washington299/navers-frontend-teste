@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { OverridableCardHeader } from '@material-ui/core';
+import React from 'react';
 import { Close } from '@material-ui/icons';
 
 import { calculate_age, calculate_admission_date } from '../../../helpers/date-calculate';
@@ -21,7 +20,7 @@ type Props = {
   birthdate: string,
   admission_date: string,
   project: string,
-  closeButton: () => void,
+  closeButton: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const ShowNaverModal: React.FC<Props> = ({
@@ -34,7 +33,7 @@ const ShowNaverModal: React.FC<Props> = ({
       </Picture>
       <InformationArea>
         <span className="close-button">
-          <Close onClick={() => closeButton()} />
+          <Close onClick={() => closeButton(false)} />
         </span>
         <Title>{name}</Title>
         <Text>{job_role}</Text>
