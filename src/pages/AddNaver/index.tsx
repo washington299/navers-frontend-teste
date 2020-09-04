@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ArrowBackIos, Close } from '@material-ui/icons';
 
-import api from '../../services/api';
 import { useCredentialsState } from '../../contexts/credentials';
-import { convert_date_to_brazilian_format } from '../../helpers/date-calculate';
+import { CreateNaver } from '../../services/api';
 
 import Header from '../../components/Header';
 
@@ -30,21 +29,13 @@ const AddNaver: React.FC = () => {
   const { register, handleSubmit, errors } = useForm();
   const [addModal, setAddModal] = useState(false);
 
-  function onSubmit(values: any) {
-    const {
-      name, birthdate, project, job_role, admission_date, url,
-    } = values;
-
-    api.post('/navers', {
-      name,
-      birthdate: convert_date_to_brazilian_format(birthdate),
-      project,
-      job_role,
-      admission_date: convert_date_to_brazilian_format(admission_date),
-      url,
-    }, { headers: { Authorization: `Bearer ${token}` } })
-      .then(() => setAddModal(true))
-      .catch(() => history.push('/'));
+  async function onSubmit(values: any) {
+    const res = await CreateNaver(values, token);
+    if (!res) {
+      history.push('/');
+      return;
+    }
+    setAddModal(true);
   }
 
   function handleCloseModal() {
