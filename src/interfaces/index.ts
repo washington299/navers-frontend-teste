@@ -1,4 +1,4 @@
-export interface INaver {
+export interface Naver{
   id: string,
   name: string,
   admission_date: string,

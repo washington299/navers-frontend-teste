@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 
 import { GetAllNavers } from '../../services/api';
-import { INaver } from '../../interfaces';
+import * as I from '../../interfaces';
 
 import { useCredentialsState } from '../../contexts/credentials';
 
@@ -18,7 +18,7 @@ import {
 } from './styles';
 
 const Home: React.FC = () => {
-  const [navers, setNavers] = useState<INaver[]>([]);
+  const [navers, setNavers] = useState<I.Naver[]>([]);
   const { token } = useCredentialsState();
   const history = useHistory();
 

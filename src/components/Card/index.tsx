@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Edit, Delete, Close } from '@material-ui/icons';
+import { Edit, Delete } from '@material-ui/icons';
 
-import { INaver } from '../../interfaces';
+import * as I from '../../interfaces';
 import ShowNaver from '../Modals/ShowNaver';
 
 import {
@@ -14,7 +14,7 @@ import {
 import { Modal } from '../../styles/global-elements';
 
 type Props = {
-  naver: INaver,
+  naver: I.Naver,
 };
 
 const Card: React.FC<Props> = ({ naver }: Props) => {
@@ -35,7 +35,7 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
           birthdate={naver.birthdate}
           admission_date={naver.admission_date}
           project={naver.project}
-          closeButton={() => setDisplayNaverDataBox(false)}
+          closeButton={setDisplayNaverDataBox}
         />
       )}
       {displayDeleteNaverBox && (

@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from 'react';
 
-import { INaver } from '../interfaces';
+import * as I from '../interfaces';
 
 const initialValue = {
   id: '',
@@ -13,12 +13,12 @@ const initialValue = {
   url: '',
 };
 
-const NaverContextState = createContext<INaver>(initialValue);
+const NaverContextState = createContext<I.Naver>(initialValue);
 const NaverContextDispatch = createContext<React.Dispatch<Action>>(() => {});
 
-type State = INaver;
-type Action = | { type: 'GET_NAVER_DATA', payload: INaver }
-              | { type: 'CLEAR_NAVER_DATA', payload: INaver }
+type State = I.Naver;
+type Action = | { type: 'GET_NAVER_DATA', payload: I.Naver }
+              | { type: 'CLEAR_NAVER_DATA', payload: I.Naver }
 
 function reducer(state: State, action: Action) {
   switch (action.type) {
