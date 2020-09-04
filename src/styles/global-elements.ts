@@ -4,10 +4,6 @@ type Alert = {
   center?: string,
 };
 
-type DisplayModal = {
-  display?: boolean,
-};
-
 export const GlobalLogo = styled.img.attrs({
   src: 'assets/images/logo-and-name.png',
   alt: 'Navers Logo',
@@ -62,7 +58,7 @@ export const AlertMsg = styled.span<Alert>`
   text-align: ${(props) => props.center || 'start'};
 `;
 
-export const Modal = styled.div<DisplayModal>`
+export const Modal = styled.div`
   position: fixed;
   left: 0;
   top: 0;
@@ -70,7 +66,7 @@ export const Modal = styled.div<DisplayModal>`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 99;
-  display: ${(props) => (props.display ? 'flex' : 'none')};
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
