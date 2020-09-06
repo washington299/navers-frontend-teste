@@ -18,10 +18,10 @@ function App() {
         <GlobalStyles />
         <Router>
           <Switch>
-            <PrivateRouter path="/add">
+            <PrivateRouter private path="/add">
               <AddNaver />
             </PrivateRouter>
-            <PrivateRouter path="/navers">
+            <PrivateRouter private path="/navers">
               <Home />
             </PrivateRouter>
             <Route exact path="/" component={Login} />
