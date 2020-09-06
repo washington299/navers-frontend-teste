@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { GetAllNavers } from '../../services/api';
 import * as I from '../../interfaces';
-
-import { useCredentialsState } from '../../contexts/credentials';
 
 import Header from '../../components/Header';
 import Card from '../../components/Card';
@@ -19,20 +17,18 @@ import {
 
 const Home: React.FC = () => {
   const [navers, setNavers] = useState<I.Naver[]>([]);
-  const { token } = useCredentialsState();
-  const history = useHistory();
 
   useEffect(() => {
     async function getNavers() {
-      const res = await GetAllNavers(token);
+      const res = await GetAllNavers();
       if (!res) {
-        history.push('/');
+        window.location.href = '/';
         return;
       }
       setNavers(res);
     }
     getNavers();
-  });
+  }, []);
 
   return (
     <>

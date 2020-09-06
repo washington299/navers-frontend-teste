@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-import { SignIn } from '../../services/api';
-import { useCredentialsDispatch } from '../../contexts/credentials';
+import { login } from '../../services/api';
+import { Log } from '../../services/auth';
 
 import {
   Container,
@@ -16,27 +16,19 @@ import { Input, Label, AlertMsg } from '../../styles/global-elements';
 
 const Login: React.FC = () => {
   const history = useHistory();
-  const dispatch = useCredentialsDispatch();
   const { handleSubmit, register, errors } = useForm();
   const [invalidCredentials, setInvalidCredentials] = useState(false);
 
   async function onSubmit(values: any) {
     const { email, password } = values;
-    const naver = await SignIn(email, password);
+    const authenticated = await login(email, password);
 
-    if (!naver) {
+    if (!authenticated) {
       setInvalidCredentials(true);
       return;
     }
 
-    dispatch({
-      type: 'GET_USER_CREDENTIALS',
-      payload: {
-        id: naver.id,
-        email: naver.email,
-        token: naver.token,
-      },
-    });
+    Log.doLogin(authenticated.data.token);
     history.push('/navers');
   }
 
