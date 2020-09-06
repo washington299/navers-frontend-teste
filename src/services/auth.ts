@@ -1,17 +1,24 @@
-import api from '../services/api';
+import axios from 'axios';
+import cookie from 'js-cookie';
 
-// export const auth = {
-//   isAuthenticated: false,
-//   login: (email: string, password: string): Promise<boolean> => (
-//     api.post('/users/login', { email, password })
-//       .then(() => true)
-//       .catch(() => false)
-//   ),
-//   logout: () => {},
-// };
+import { BASE_URL } from './api';
 
-export const isAuthenticated = async (token: string): Promise<boolean> => (
-  api.get('/navers', { headers: { Authorization: `Bearer ${token}` } })
-    .then(() => true)
-    .catch(() => false)
-);
+export const Log = {
+  doLogin: (token: string) => {
+    cookie.set('token', token);
+  },
+  isLogged: async () => {
+    const token = cookie.get('token');
+    const response = await axios.get(`${BASE_URL}/navers`, { headers: { Authorization: `Bearer ${token}` } });
+
+    if (response.status === 200) {
+      return true;
+    }
+
+    return Log.doLogOut();
+  },
+  doLogOut: () => {
+    cookie.remove('token');
+    return false;
+  },
+};
