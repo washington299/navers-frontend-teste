@@ -29,7 +29,7 @@ const Login: React.FC = () => {
     }
 
     Log.doLogin(authenticated.data.token);
-    history.push('/navers');
+    history.push('/');
   }
 
   return (

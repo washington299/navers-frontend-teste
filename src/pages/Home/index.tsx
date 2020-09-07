@@ -22,7 +22,7 @@ const Home: React.FC = () => {
     async function getNavers() {
       const res = await GetAllNavers();
       if (!res) {
-        window.location.href = '/';
+        window.location.href = '/sign-in';
         return;
       }
       setNavers(res);
