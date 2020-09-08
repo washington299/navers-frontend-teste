@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ArrowBackIos, Close } from '@material-ui/icons';
 
-import { useCredentialsState } from '../../contexts/credentials';
 import { CreateNaver } from '../../services/api';
 
 import Header from '../../components/Header';
@@ -25,17 +24,12 @@ import {
 
 const AddNaver: React.FC = () => {
   const history = useHistory();
-  const { token } = useCredentialsState();
   const { register, handleSubmit, errors } = useForm();
   const [addModal, setAddModal] = useState(false);
 
   async function onSubmit(values: any) {
-    const res = await CreateNaver(values, token);
-    if (!res) {
-      history.push('/');
-      return;
-    }
-    setAddModal(true);
+    const res = await CreateNaver(values);
+    if (res) setAddModal(true);
   }
 
   function handleCloseModal() {

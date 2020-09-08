@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-
-import { Log } from '../services/auth';
+import cookie from 'js-cookie';
 
 type Props = {
   children: React.ReactNode,
@@ -9,12 +8,18 @@ type Props = {
 }
 
 const PrivateRoute: React.FC<Props> = ({ children, ...rest }: Props) => {
-  const auth = Log.isLogged().then((res) => res);
+  let authenticated: boolean;
+  const token = cookie.get('token');
+  if (!token || token === '') {
+    authenticated = false;
+  } else {
+    authenticated = true;
+  }
 
   return (
     <Route
       {...rest}
-      render={() => (auth ? children : <Redirect to="/sign-in" />)}
+      render={() => (authenticated ? children : <Redirect to="/sign-in" />)}
     />
   );
 };

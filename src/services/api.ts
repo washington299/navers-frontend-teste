@@ -26,18 +26,20 @@ export const GetAllNavers = async () => {
   }
 };
 
-export const CreateNaver = (naver: I.Naver) => {
+export const CreateNaver = async (naver: I.Naver) => {
   const token = cookie.get('token');
-  const response = axios.post(`${BASE_URL}/navers`, {
-    name: naver.name,
-    birthdate: convert_date_to_brazilian_format(naver.birthdate),
-    project: naver.project,
-    job_role: naver.job_role,
-    admission_date: convert_date_to_brazilian_format(naver.admission_date),
-    url: naver.url,
-  }, { headers: { Authorization: `Bearer ${token}` } })
-    .then(() => true)
-    .catch(() => Log.doLogOut());
+  try {
+    await axios.post(`${BASE_URL}/navers`, {
+      name: naver.name,
+      birthdate: convert_date_to_brazilian_format(naver.birthdate),
+      project: naver.project,
+      job_role: naver.job_role,
+      admission_date: convert_date_to_brazilian_format(naver.admission_date),
+      url: naver.url,
+    }, { headers: { Authorization: `Bearer ${token}` } });
 
-  return response;
+    return true;
+  } catch (error) {
+    return Log.doLogOut();
+  }
 };

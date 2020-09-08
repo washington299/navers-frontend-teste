@@ -21,10 +21,6 @@ const Home: React.FC = () => {
   useEffect(() => {
     async function getNavers() {
       const res = await GetAllNavers();
-      if (!res) {
-        window.location.href = '/sign-in';
-        return;
-      }
       setNavers(res);
     }
     getNavers();
