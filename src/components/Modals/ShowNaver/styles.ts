@@ -28,6 +28,7 @@ export const Picture = styled.div`
 
 export const InformationArea = styled.div`
   flex: 1;
+  padding-left: 15px;
 
   .close-button {
     display: block;
@@ -37,7 +38,7 @@ export const InformationArea = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin: 0 15px;
+  margin-bottom: 0;
   font-size: var(--big-font-size);
 
   @media screen and (min-width: 960px) {
@@ -60,7 +61,7 @@ export const SubTitle = styled(Title)`
 
 export const Text = styled.span`
   display: block;
-  margin: 15px 15px;
+  margin: 15px 0;
   font-size: 14px;
 
   @media screen and (min-width: 768px) {

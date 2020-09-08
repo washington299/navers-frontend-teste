@@ -70,3 +70,14 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
 `;
+export const Icons = styled.div`
+  display: flex;
+  color: var(primary--color);
+  font-size: var(--normal-font-size);
+  margin-bottom: 15px;
+
+  svg {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+`;

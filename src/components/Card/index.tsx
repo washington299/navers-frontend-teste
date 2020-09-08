@@ -8,10 +8,9 @@ import {
   Container,
   Name,
   Job,
-  Icons,
   DeleteNaver,
 } from './styles';
-import { Modal } from '../../styles/global-elements';
+import { Modal, Icons } from '../../styles/global-elements';
 
 type Props = {
   naver: I.Naver,

@@ -24,16 +24,6 @@ export const Job = styled.span`
   font-size: var(--normal-font-size);
 `;
 
-export const Icons = styled.div`
-  display: flex;
-  color: var(primary--color);
-
-  svg {
-    margin-right: 10px;
-    cursor: pointer;
-  }
-`;
-
 export const DeleteNaver = styled.div`
   width: 200px;
   height: 200px;
