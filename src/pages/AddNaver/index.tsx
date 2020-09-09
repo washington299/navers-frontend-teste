@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { ArrowBackIos, Close } from '@material-ui/icons';
+import { ArrowBackIos } from '@material-ui/icons';
 
 import { CreateNaver } from '../../services/api';
 
 import Header from '../../components/Header';
+import AddNaverModal from '../../components/Modals/AddNaver';
 
 import {
   Container,
@@ -15,15 +16,10 @@ import {
   Form,
   FormFieldArea,
   FormButton,
-  ModalBox,
-  ModalTitle,
 } from './styles';
-import {
-  Label, Input, AlertMsg, Modal,
-} from '../../styles/global-elements';
+import { Label, Input, AlertMsg } from '../../styles/global-elements';
 
 const AddNaver: React.FC = () => {
-  const history = useHistory();
   const { register, handleSubmit, errors } = useForm();
   const [addModal, setAddModal] = useState(false);
 
@@ -32,23 +28,10 @@ const AddNaver: React.FC = () => {
     if (res) setAddModal(true);
   }
 
-  function handleCloseModal() {
-    setAddModal(false);
-    history.push('/navers');
-  }
-
   return (
     <>
       {addModal && (
-        <Modal>
-          <ModalBox>
-            <span style={{ display: 'block', textAlign: 'end', cursor: 'pointer' }}>
-              <Close onClick={handleCloseModal} />
-            </span>
-            <ModalTitle>Naver criado</ModalTitle>
-            <span>Naver criado com sucesso!</span>
-          </ModalBox>
-        </Modal>
+        <AddNaverModal closeButton={setAddModal} />
       )}
       <Header />
       <Container>
