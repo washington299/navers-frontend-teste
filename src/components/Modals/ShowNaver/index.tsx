@@ -21,15 +21,14 @@ type Props = {
   admission_date: string,
   project: string,
   closeButton: React.Dispatch<React.SetStateAction<boolean>>,
+  deleteButton: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 const ShowNaverModal: React.FC<Props> = ({
-  url, name, job_role, birthdate, admission_date, project, closeButton,
+  url, name, job_role, birthdate, admission_date, project, closeButton, deleteButton,
 }) => {
-  const [displayDeleteNaverBox, setDisplayDeleteNaverBox] = useState(false);
-
   function handleDeleteNaver() {
-    setDisplayDeleteNaverBox(true);
+    deleteButton(true);
   }
 
   return (

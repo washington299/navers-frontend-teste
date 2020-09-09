@@ -23,9 +23,3 @@ export const Job = styled.span`
   margin: 10px 0;
   font-size: var(--normal-font-size);
 `;
-
-export const DeleteNaver = styled.div`
-  width: 200px;
-  height: 200px;
-  background-color: var(--secondary-color);
-`;

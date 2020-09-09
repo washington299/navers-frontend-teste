@@ -3,14 +3,14 @@ import { Edit, Delete } from '@material-ui/icons';
 
 import * as I from '../../interfaces';
 import ShowNaver from '../Modals/ShowNaver';
+import DeleteNaver from '../Modals/DeleteNaver';
 
 import {
   Container,
   Name,
   Job,
-  DeleteNaver,
 } from './styles';
-import { Modal, Icons } from '../../styles/global-elements';
+import { Icons } from '../../styles/global-elements';
 
 type Props = {
   naver: I.Naver,
@@ -21,6 +21,7 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
   const [displayDeleteNaverBox, setDisplayDeleteNaverBox] = useState(false);
 
   function handleDeleteNaver() {
+    setDisplayNaverDataBox(false);
     setDisplayDeleteNaverBox(true);
   }
 
@@ -35,16 +36,20 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
           admission_date={naver.admission_date}
           project={naver.project}
           closeButton={setDisplayNaverDataBox}
+          deleteButton={setDisplayDeleteNaverBox}
         />
       )}
       {displayDeleteNaverBox && (
-        <Modal>
-          <DeleteNaver>Deletar Naver</DeleteNaver>
-        </Modal>
+        <DeleteNaver closeButton={setDisplayDeleteNaverBox} />
       )}
-      <Container onClick={() => setDisplayNaverDataBox(true)}>
-        <img src={naver.url} alt={`${naver.name} - ${naver.job_role}`} />
-        <Name>{naver.name}</Name>
+      <Container>
+        <img
+          src={naver.url}
+          alt={`${naver.name} - ${naver.job_role}`}
+          onClick={() => setDisplayNaverDataBox(true)}
+          onKeyPress={() => setDisplayDeleteNaverBox(true)}
+        />
+        <Name onClick={() => setDisplayNaverDataBox(true)}>{naver.name}</Name>
         <Job>{naver.job_role}</Job>
         <Icons>
           <Edit />
