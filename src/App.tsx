@@ -8,6 +8,7 @@ import PrivateRouter from './routers/private-router';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import AddNaver from './pages/AddNaver';
+import EditNaver from './pages/EditNaver';
 
 import GlobalStyles from './styles/global-styles';
 
@@ -21,6 +22,9 @@ function App() {
             <Route exact path="/sign-in" component={Login} />
             <PrivateRouter path="/add">
               <AddNaver />
+            </PrivateRouter>
+            <PrivateRouter path="/edit">
+              <EditNaver />
             </PrivateRouter>
             <PrivateRouter path="/">
               <Home />

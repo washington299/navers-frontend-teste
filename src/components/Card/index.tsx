@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Edit, Delete } from '@material-ui/icons';
 
 import * as I from '../../interfaces';
@@ -52,7 +53,9 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
         <Name onClick={() => setDisplayNaverDataBox(true)}>{naver.name}</Name>
         <Job>{naver.job_role}</Job>
         <Icons>
-          <Edit />
+          <Link to="/edit" style={{ color: 'var(--primary-color)' }}>
+            <Edit />
+          </Link>
           <Delete onClick={handleDeleteNaver} />
         </Icons>
       </Container>

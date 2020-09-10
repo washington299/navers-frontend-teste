@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Close, Edit, Delete } from '@material-ui/icons';
 
 import { calculate_age, calculate_admission_date } from '../../../helpers/date-calculate';
@@ -50,7 +51,9 @@ const ShowNaverModal: React.FC<Props> = ({
           <SubTitle>Projetos que ja participou</SubTitle>
           <Text>{project}</Text>
           <Icons>
-            <Edit />
+            <Link to="/edit" style={{ color: 'var(--primary-color)' }}>
+              <Edit />
+            </Link>
             <Delete onClick={handleDeleteNaver} />
           </Icons>
         </InformationArea>
