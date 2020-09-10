@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Close, Edit, Delete } from '@material-ui/icons';
 
 import { calculate_age, calculate_admission_date } from '../../../helpers/date-calculate';

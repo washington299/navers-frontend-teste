@@ -40,7 +40,7 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
         />
       )}
       {displayDeleteNaverBox && (
-        <DeleteNaver closeButton={setDisplayDeleteNaverBox} />
+        <DeleteNaver closeButton={setDisplayDeleteNaverBox} id={naver.id} />
       )}
       <Container>
         <img
