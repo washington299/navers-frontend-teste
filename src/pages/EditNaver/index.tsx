@@ -6,7 +6,7 @@ import { ArrowBackIos } from '@material-ui/icons';
 import { CreateNaver } from '../../services/api';
 
 import Header from '../../components/Header';
-import AddNaverModal from '../../components/Modals/AddNaver';
+import EditNaverModal from '../../components/Modals/EditNaver';
 
 import {
   Container,
@@ -31,7 +31,7 @@ const EditNaver: React.FC = () => {
   return (
     <>
       {addModal && (
-        <AddNaverModal closeButton={setAddModal} />
+        <EditNaverModal closeButton={setAddModal} />
       )}
       <Header />
       <Container>
