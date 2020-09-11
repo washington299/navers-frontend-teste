@@ -5,7 +5,7 @@ type Alert = {
 };
 
 export const GlobalLogo = styled.img.attrs({
-  src: 'assets/images/logo-and-name.png',
+  src: '../assets/images/logo-and-name.png',
   alt: 'Navers Logo',
 })`
 `;
