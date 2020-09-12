@@ -15,6 +15,7 @@ import {
 import { Modal, Icons } from '../../../styles/global-elements';
 
 type Props = {
+  id: string,
   url: string,
   name: string,
   job_role: string,
@@ -26,7 +27,7 @@ type Props = {
 }
 
 const ShowNaverModal: React.FC<Props> = ({
-  url, name, job_role, birthdate, admission_date, project, closeButton, deleteButton,
+  id, url, name, job_role, birthdate, admission_date, project, closeButton, deleteButton,
 }) => {
   function handleDeleteNaver() {
     deleteButton(true);
@@ -51,7 +52,7 @@ const ShowNaverModal: React.FC<Props> = ({
           <SubTitle>Projetos que ja participou</SubTitle>
           <Text>{project}</Text>
           <Icons>
-            <Link to="/edit" style={{ color: 'var(--primary-color)' }}>
+            <Link to={`/edit/${id}`} style={{ color: 'var(--primary-color)' }}>
               <Edit />
             </Link>
             <Delete onClick={handleDeleteNaver} />

@@ -30,6 +30,7 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
     <>
       {displayNaverDataBox && (
         <ShowNaver
+          id={naver.id}
           url={naver.url}
           name={naver.name}
           job_role={naver.job_role}
@@ -53,7 +54,7 @@ const Card: React.FC<Props> = ({ naver }: Props) => {
         <Name onClick={() => setDisplayNaverDataBox(true)}>{naver.name}</Name>
         <Job>{naver.job_role}</Job>
         <Icons>
-          <Link to="/edit" style={{ color: 'var(--primary-color)' }}>
+          <Link to={`/edit/${naver.id}`} style={{ color: 'var(--primary-color)' }}>
             <Edit />
           </Link>
           <Delete onClick={handleDeleteNaver} />

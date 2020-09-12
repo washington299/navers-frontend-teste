@@ -23,7 +23,7 @@ function App() {
             <PrivateRouter path="/add">
               <AddNaver />
             </PrivateRouter>
-            <PrivateRouter path="/edit">
+            <PrivateRouter path="/edit/:id">
               <EditNaver />
             </PrivateRouter>
             <PrivateRouter path="/">

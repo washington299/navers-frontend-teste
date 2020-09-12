@@ -44,6 +44,16 @@ export const CreateNaver = async (naver: I.Naver) => {
   }
 };
 
+export const getUniqueNaver = async (id: string) => {
+  const token = cookie.get('token');
+  try {
+    const response = await axios.get(`${BASE_URL}/navers/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+    return response.data;
+  } catch (error) {
+    return Log.doLogOut();
+  }
+};
+
 export const deleteNaver = async (id: string) => {
   const token = cookie.get('token');
   try {
