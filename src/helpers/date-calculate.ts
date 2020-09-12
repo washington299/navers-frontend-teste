@@ -23,3 +23,18 @@ export function convert_date_to_brazilian_format(date: string) {
 
   return result;
 }
+
+export function convert_date_format(date: string) {
+  const year = new Date(date).getUTCFullYear().toString();
+  let month = new Date(date).getMonth().toString();
+  let day = new Date(date).getDate().toString();
+  if (month.length < 2) {
+    month = `0${month}`;
+  }
+  if (day.length < 2) {
+    day = `0${day}`;
+  }
+  const result = `${year}-${month}-${day}`;
+
+  return result;
+}
