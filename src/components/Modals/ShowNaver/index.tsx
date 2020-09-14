@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Close, Edit, Delete } from '@material-ui/icons';
 
-import { calculate_age, calculate_admission_date } from '../../../helpers/date-calculate';
+import { calculate_age, convert_date_to_brazilian_format } from '../../../helpers/date-calculate';
 
 import {
   NaverData,
@@ -48,7 +48,7 @@ const ShowNaverModal: React.FC<Props> = ({
           <SubTitle>Idade</SubTitle>
           <Text>{`${calculate_age(birthdate)} anos.`}</Text>
           <SubTitle>Tempo de empresa</SubTitle>
-          <Text>{`Desde: ${calculate_admission_date(admission_date)}.`}</Text>
+          <Text>{`Desde: ${convert_date_to_brazilian_format(admission_date)}.`}</Text>
           <SubTitle>Projetos que ja participou</SubTitle>
           <Text>{project}</Text>
           <Icons>

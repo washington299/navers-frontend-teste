@@ -22,13 +22,13 @@ import {
 import { Label, Input, AlertMsg } from '../../styles/global-elements';
 
 const EditNaver: React.FC = () => {
+  const history = useHistory();
+  const { id } = useParams();
   const { register, handleSubmit, errors } = useForm();
   const [naver, setNaver] = useState<Naver>({} as Naver);
   const [birthdate, setBirthdate] = useState<string>('');
   const [admissionDate, setAdmissionDate] = useState<string>('');
   const [editModal, setEditModal] = useState(false);
-  const { id } = useParams();
-  const history = useHistory();
 
   useEffect(() => {
     async function getNaver() {
