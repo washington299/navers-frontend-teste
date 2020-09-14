@@ -8,8 +8,8 @@ export function calculate_age(date: string) {
 
 export function convert_date_to_brazilian_format(date: string) {
   const year = new Date(date).getUTCFullYear();
-  const month = new Date(date).getMonth();
-  const day = new Date(date).getDate() + 1;
+  const month = new Date(date).getUTCMonth();
+  const day = new Date(date).getUTCDate();
 
   const result = new Date(year, month, day).toLocaleDateString('pt-BR');
   return result;
@@ -17,8 +17,8 @@ export function convert_date_to_brazilian_format(date: string) {
 
 export function convert_date_format(date: string) {
   const year = new Date(date).getUTCFullYear().toString();
-  const month = new Date(date).getMonth() + 1;
-  const day = new Date(date).getDate() + 1;
+  const month = new Date(date).getUTCMonth() + 1;
+  const day = new Date(date).getUTCDate();
 
   const monthStr = month.toString();
   const dayStr = day.toString();

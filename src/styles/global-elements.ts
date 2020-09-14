@@ -72,7 +72,7 @@ export const Modal = styled.div`
 `;
 export const Icons = styled.div`
   display: flex;
-  color: var(primary--color);
+  color: var(--primary--color);
   font-size: var(--normal-font-size);
   margin-bottom: 15px;
 
