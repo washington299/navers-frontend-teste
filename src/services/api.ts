@@ -26,6 +26,16 @@ export const GetAllNavers = async () => {
   }
 };
 
+export const getUniqueNaver = async (id: string) => {
+  const token = cookie.get('token');
+  try {
+    const response = await axios.get(`${BASE_URL}/navers/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+    return response.data;
+  } catch (error) {
+    return Log.doLogOut();
+  }
+};
+
 export const CreateNaver = async (naver: I.Naver) => {
   const token = cookie.get('token');
   try {
@@ -44,11 +54,19 @@ export const CreateNaver = async (naver: I.Naver) => {
   }
 };
 
-export const getUniqueNaver = async (id: string) => {
+export const updateNaver = async (naver: I.Naver, id: string) => {
   const token = cookie.get('token');
   try {
-    const response = await axios.get(`${BASE_URL}/navers/${id}`, { headers: { Authorization: `Bearer ${token}` } });
-    return response.data;
+    await axios.put(`${BASE_URL}/navers/${id}`, {
+      name: naver.name,
+      birthdate: convert_date_to_brazilian_format(naver.birthdate),
+      project: naver.project,
+      job_role: naver.job_role,
+      admission_date: convert_date_to_brazilian_format(naver.admission_date),
+      url: naver.url,
+    }, { headers: { Authorization: `Bearer ${token}` } });
+
+    return true;
   } catch (error) {
     return Log.doLogOut();
   }
