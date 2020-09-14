@@ -11,8 +11,9 @@ import {
   Title,
   SubTitle,
   Text,
+  IconsArea,
 } from './styles';
-import { Modal, Icons } from '../../../styles/global-elements';
+import { Modal } from '../../../styles/global-elements';
 
 type Props = {
   id: string,
@@ -51,12 +52,12 @@ const ShowNaverModal: React.FC<Props> = ({
           <Text>{`Desde: ${convert_date_to_brazilian_format(admission_date)}.`}</Text>
           <SubTitle>Projetos que ja participou</SubTitle>
           <Text>{project}</Text>
-          <Icons>
+          <IconsArea>
             <Link to={`/edit/${id}`} style={{ color: 'var(--primary-color)' }}>
               <Edit />
             </Link>
             <Delete onClick={handleDeleteNaver} />
-          </Icons>
+          </IconsArea>
         </InformationArea>
       </NaverData>
     </Modal>

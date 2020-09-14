@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Icons } from '../../../styles/global-elements';
 
 export const NaverData = styled.div`
   width: 80%;
@@ -65,11 +66,16 @@ export const Text = styled.span`
   font-size: 14px;
 
   @media screen and (min-width: 768px) {
-    font-size: 18px;
-    margin: 15px 20px;
-  }
-  @media screen and (min-width: 768px) {
     font-size: 22px;
+    margin: 25px 0;
+  }
+  @media screen and (min-width: 960px) {
     margin: 25px 20px;
+  }
+`;
+
+export const IconsArea = styled(Icons)`
+  @media screen and (min-width: 960px) {
+    margin-left: 20px;
   }
 `;
