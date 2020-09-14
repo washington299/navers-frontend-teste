@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 import Card from '../../components/Card';
 
 import {
-  HomeStyles,
+  Container,
   Top,
   Title,
   AddButton,
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Header />
-      <HomeStyles>
+      <Container>
         <Top>
           <Title>Navers</Title>
           <Link to="/add">
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
             <Card key={naver.id} naver={naver} />
           ))}
         </Main>
-      </HomeStyles>
+      </Container>
     </>
   );
 };

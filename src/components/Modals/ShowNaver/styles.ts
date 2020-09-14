@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Icons } from '../../../styles/global-elements';
 
-export const NaverData = styled.div`
+export const ModalBox = styled.div`
   width: 80%;
   background-color: var(--secondary-color);
   display: flex;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Button } from '../../styles/global-elements';
 
-export const HomeStyles = styled.section`
+export const Container = styled.section`
   padding: 10px 15px;
 
   @media screen and (min-width: 768px) {

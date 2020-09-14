@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { GlobalLogo } from '../../styles/global-elements';
 
-export const HeaderStyle = styled.header`
+export const Container = styled.header`
   height: 85px;
   display: flex;
   justify-content: space-between;

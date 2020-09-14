@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Log } from '../../services/auth';
 
-import { HeaderStyle, Logo, SignOut } from './styles';
+import { Container, Logo, SignOut } from './styles';
 
 const Header: React.FC = () => {
   function handleClick() {
@@ -10,10 +10,10 @@ const Header: React.FC = () => {
   }
 
   return (
-    <HeaderStyle>
+    <Container>
       <Logo />
       <SignOut onClick={handleClick}>Sair</SignOut>
-    </HeaderStyle>
+    </Container>
   );
 };
 

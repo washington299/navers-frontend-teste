@@ -5,7 +5,7 @@ import { Close, Edit, Delete } from '@material-ui/icons';
 import { calculate_age, convert_date_to_brazilian_format } from '../../../helpers/date-calculate';
 
 import {
-  NaverData,
+  ModalBox,
   Picture,
   InformationArea,
   Title,
@@ -36,7 +36,7 @@ const ShowNaverModal: React.FC<Props> = ({
 
   return (
     <Modal>
-      <NaverData>
+      <ModalBox>
         <Picture>
           <img src={url} alt={`${name} - ${job_role}`} />
         </Picture>
@@ -59,7 +59,7 @@ const ShowNaverModal: React.FC<Props> = ({
             <Delete onClick={handleDeleteNaver} />
           </IconsArea>
         </InformationArea>
-      </NaverData>
+      </ModalBox>
     </Modal>
   );
 };
