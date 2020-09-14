@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ArrowBackIos } from '@material-ui/icons';
 
-import { CreateNaver } from '../../services/api';
+import { CreateNaver } from 'services/api';
 
-import Header from '../../components/Header';
-import AddNaverModal from '../../components/Modals/AddNaver';
+import Header from 'components/Header';
+import AddNaverModal from 'components/Modals/AddNaver';
 
 import {
   Container,
@@ -16,8 +16,8 @@ import {
   Form,
   FormFieldArea,
   FormButton,
-} from './styles';
-import { Label, Input, AlertMsg } from '../../styles/global-elements';
+} from 'pages/AddNaver/styles';
+import { Label, Input, AlertMsg } from 'styles/global-elements';
 
 const AddNaver: React.FC = () => {
   const { register, handleSubmit, errors } = useForm();

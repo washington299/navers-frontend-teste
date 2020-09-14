@@ -2,8 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Close } from '@material-ui/icons';
 
-import { ModalBox, ModalTitle } from './styles';
-import { Modal } from '../../../styles/global-elements';
+import { ModalBox, ModalTitle } from 'components/Modals/EditNaver/styles';
+import { Modal } from 'styles/global-elements';
 
 type Props = {
   closeButton: React.Dispatch<React.SetStateAction<boolean>>;

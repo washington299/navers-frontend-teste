@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from 'react';
 
-import * as I from '../interfaces';
+import * as I from 'interfaces';
 
 const initialValue = {
   id: '',

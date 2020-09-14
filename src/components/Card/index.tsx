@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Edit, Delete } from '@material-ui/icons';
 
-import * as I from '../../interfaces';
-import ShowNaver from '../Modals/ShowNaver';
-import DeleteNaver from '../Modals/DeleteNaver';
+import * as I from 'interfaces';
+import ShowNaver from 'components/Modals/ShowNaver';
+import DeleteNaver from 'components/Modals/DeleteNaver';
 
 import {
   Container,
   Name,
   Job,
-} from './styles';
-import { Icons } from '../../styles/global-elements';
+} from 'components/Card/styles';
+import { Icons } from 'styles/global-elements';
 
 type Props = {
   naver: I.Naver,

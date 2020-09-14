@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Icons } from '../../../styles/global-elements';
+import { Icons } from 'styles/global-elements';
 
 export const ModalBox = styled.div`
   width: 80%;

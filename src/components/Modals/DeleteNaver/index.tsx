@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Close } from '@material-ui/icons';
 
-import { deleteNaver } from '../../../services/api';
+import { deleteNaver } from 'services/api';
 
 import {
   ModalBox, ModalTitle, ButtonsArea, CancelButton, DeleteButton,
-} from './styles';
-import { Modal } from '../../../styles/global-elements';
+} from 'components/Modals/DeleteNaver/styles';
+import { Modal } from 'styles/global-elements';
 
 type Props = {
   closeButton: React.Dispatch<React.SetStateAction<boolean>>;

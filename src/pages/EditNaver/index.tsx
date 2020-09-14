@@ -3,12 +3,12 @@ import { Link, useParams, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ArrowBackIos } from '@material-ui/icons';
 
-import { Naver } from '../../interfaces';
-import { getUniqueNaver, updateNaver } from '../../services/api';
-import { convert_date_format } from '../../helpers/date-calculate';
+import { Naver } from 'interfaces';
+import { getUniqueNaver, updateNaver } from 'services/api';
+import { convert_date_format } from 'helpers/date-calculate';
 
-import Header from '../../components/Header';
-import EditNaverModal from '../../components/Modals/EditNaver';
+import Header from 'components/Header';
+import EditNaverModal from 'components/Modals/EditNaver';
 
 import {
   Container,
@@ -18,8 +18,8 @@ import {
   Form,
   FormFieldArea,
   FormButton,
-} from './styles';
-import { Label, Input, AlertMsg } from '../../styles/global-elements';
+} from 'pages/EditNaver/styles';
+import { Label, Input, AlertMsg } from 'styles/global-elements';
 
 const EditNaver: React.FC = () => {
   const history = useHistory();

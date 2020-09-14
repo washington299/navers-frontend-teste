@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '../../../styles/global-elements';
+import { Button } from 'styles/global-elements';
 
 export const ModalBox = styled.div`
   width: 300px;

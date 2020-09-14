@@ -1,9 +1,9 @@
 import axios from 'axios';
 import cookie from 'js-cookie';
 
-import * as I from '../interfaces';
-import { convert_date_to_brazilian_format } from '../helpers/date-calculate';
-import { Log } from './auth';
+import * as I from 'interfaces';
+import { convert_date_to_brazilian_format } from 'helpers/date-calculate';
+import { Log } from 'services/auth';
 
 export const BASE_URL = 'https://navedex-api.herokuapp.com/v1';
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { GlobalLogo, Button, FieldArea } from '../../styles/global-elements';
+import { GlobalLogo, Button, FieldArea } from 'styles/global-elements';
 
 export const Container = styled.section`
   display: flex;

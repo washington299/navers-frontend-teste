@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '../../styles/global-elements';
+import { Button } from 'styles/global-elements';
 
 export const Container = styled.section`
   padding: 10px 15px;

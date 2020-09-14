@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Close, Edit, Delete } from '@material-ui/icons';
 
-import { calculate_age, convert_date_to_brazilian_format } from '../../../helpers/date-calculate';
+import { calculate_age, convert_date_to_brazilian_format } from 'helpers/date-calculate';
 
 import {
   ModalBox,
@@ -12,8 +12,8 @@ import {
   SubTitle,
   Text,
   IconsArea,
-} from './styles';
-import { Modal } from '../../../styles/global-elements';
+} from 'components/Modals/ShowNaver/styles';
+import { Modal } from 'styles/global-elements';
 
 type Props = {
   id: string,

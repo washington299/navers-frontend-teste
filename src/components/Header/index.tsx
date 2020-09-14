@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Log } from '../../services/auth';
+import { Log } from 'services/auth';
 
-import { Container, Logo, SignOut } from './styles';
+import { Container, Logo, SignOut } from 'components/Header/styles';
 
 const Header: React.FC = () => {
   function handleClick() {

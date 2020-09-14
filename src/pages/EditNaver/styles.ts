@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, FieldArea } from '../../styles/global-elements';
+import { Button, FieldArea } from 'styles/global-elements';
 
 export const Container = styled.div`
   display: flex;

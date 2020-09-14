@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { NaverProvider } from './contexts/naver';
-import PrivateRouter from './routers/private-router';
+import { NaverProvider } from 'contexts/naver';
+import PrivateRouter from 'routers/private-router';
 
-import Login from './pages/Login';
-import Home from './pages/Home';
-import AddNaver from './pages/AddNaver';
-import EditNaver from './pages/EditNaver';
+import Login from 'pages/Login';
+import Home from 'pages/Home';
+import AddNaver from 'pages/AddNaver';
+import EditNaver from 'pages/EditNaver';
 
-import GlobalStyles from './styles/global-styles';
+import GlobalStyles from 'styles/global-styles';
 
 function App() {
   return (

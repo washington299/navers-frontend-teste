@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-import { login } from '../../services/api';
-import { Log } from '../../services/auth';
+import { login } from 'services/api';
+import { Log } from 'services/auth';
 
 import {
   Container,
@@ -11,8 +11,8 @@ import {
   Logo,
   FormFieldArea,
   FormButton,
-} from './styles';
-import { Input, Label, AlertMsg } from '../../styles/global-elements';
+} from 'pages/Login/styles';
+import { Input, Label, AlertMsg } from 'styles/global-elements';
 
 const Login: React.FC = () => {
   const history = useHistory();

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { GetAllNavers } from '../../services/api';
-import * as I from '../../interfaces';
+import { GetAllNavers } from 'services/api';
+import * as I from 'interfaces';
 
-import Header from '../../components/Header';
-import Card from '../../components/Card';
+import Header from 'components/Header';
+import Card from 'components/Card';
 
 import {
   Container,
@@ -13,7 +13,7 @@ import {
   Title,
   AddButton,
   Main,
-} from './styles';
+} from 'pages/Home/styles';
 
 const Home: React.FC = () => {
   const [navers, setNavers] = useState<I.Naver[]>([]);
