@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { ArrowBackIos } from '@material-ui/icons';
 
 import { Naver } from '../../interfaces';
-import { CreateNaver, getUniqueNaver } from '../../services/api';
+import { getUniqueNaver, updateNaver } from '../../services/api';
 import { convert_date_format } from '../../helpers/date-calculate';
 
 import Header from '../../components/Header';
@@ -45,7 +45,7 @@ const EditNaver: React.FC = () => {
   }, []);
 
   async function onSubmit(values: any) {
-    const res = await CreateNaver(values);
+    const res = await updateNaver(values, id);
     if (res) setEditModal(true);
   }
 
