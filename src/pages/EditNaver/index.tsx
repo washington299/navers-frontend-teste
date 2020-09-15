@@ -42,7 +42,7 @@ const EditNaver: React.FC = () => {
       history.push('/navers');
     }
     getNaver();
-  }, []);
+  }, [id, history]);
 
   async function onSubmit(values: any) {
     const res = await updateNaver(values, id);
