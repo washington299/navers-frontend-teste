@@ -3,8 +3,8 @@
 Esse é um teste da empresa [Naver](https://nave.rs/)</a> para desenvolvedor Front-end. Acesse [esse link](https://github.com/naveteam/front-end-challenge) para ver toda a documentação e regras do teste.
 
 <p align="center">
-<img src="../navers-frontend-teste/public/assets/images/logo-and-name.png" width="200" />
-<img src="../navers-frontend-teste/public/assets/images/desktop-screen.png.png" />
+<img src="/public/assets/images/logo-and-name.png" width="200" />
+<img src="/public/assets/images/desktop-screen.png" />
 </p>
 
 ---
