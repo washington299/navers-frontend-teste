@@ -1,6 +1,6 @@
 # Naver front-end teste
 
-Esse é um teste da empresa [Naver](https://nave.rs/)</a> para desenvolvedor Front-end. Acesse [esse link](https://github.com/naveteam/front-end-challenge) para ver toda a documentação e regras do teste.
+Esse é um teste da empresa [Naver](https://nave.rs/)</a> para desenvolvedor Front-end. Acesse [esse link](https://github.com/naveteam/front-end-challenge) para ver toda a documentação e regras do teste. Link para o site do teste: https://nave-rs-frontend-test.netlify.app/sign-in.
 
 <p align="center">
 <img src="/public/assets/images/logo-and-name.png" width="200" />
