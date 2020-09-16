@@ -6,6 +6,6 @@ export const Log = {
   },
   doLogOut: () => {
     cookie.remove('token');
-    window.location.href = '/sign-in';
+    window.location.href = '/';
   },
 };
