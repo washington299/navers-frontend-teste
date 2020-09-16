@@ -1,4 +1,4 @@
 [[redirects]]
-    from = "/index.html"
-    to = "/sign-in"
+    from = "/sign-in"
+    to = "/index.html"
     status = 200
