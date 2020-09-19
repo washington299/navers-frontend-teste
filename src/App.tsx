@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { NaverProvider } from 'contexts/naver';
 import PrivateRouter from 'routers/private-router';
 
 import Login from 'pages/Login';
@@ -13,7 +12,7 @@ import GlobalStyles from 'styles/global-styles';
 
 function App() {
   return (
-    <NaverProvider>
+    <>
       <GlobalStyles />
       <Router>
         <Switch>
@@ -29,7 +28,7 @@ function App() {
           </PrivateRouter>
         </Switch>
       </Router>
-    </NaverProvider>
+    </>
   );
 }
 
