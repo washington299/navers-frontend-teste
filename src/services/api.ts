@@ -5,11 +5,20 @@ import * as I from 'interfaces';
 import { convert_date_to_brazilian_format } from 'helpers/date-calculate';
 import { Log } from 'services/auth';
 
-export const BASE_URL = 'https://navedex-api.herokuapp.com/v1';
+const token = cookie.get('token');
+const persistedToken = token ? `Bearer ${token}` : '';
+
+export const api = axios.create({
+  baseURL: 'https://navedex-api.herokuapp.com/v1',
+  headers: {
+    Authorization: persistedToken,
+    'Content-Type': 'application/json',
+  },
+});
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await axios.post(`${BASE_URL}/users/login`, { email, password });
+    const response = await api.post('/users/login', { email, password });
     return response;
   } catch (error) {
     return false;
@@ -17,9 +26,8 @@ export const login = async (email: string, password: string) => {
 };
 
 export const GetAllNavers = async () => {
-  const token = cookie.get('token');
   try {
-    const response = await axios.get(`${BASE_URL}/navers`, { headers: { Authorization: `Bearer ${token}` } });
+    const response = await api.get('/navers');
     return response.data;
   } catch (error) {
     return Log.doLogOut();
@@ -27,9 +35,8 @@ export const GetAllNavers = async () => {
 };
 
 export const getUniqueNaver = async (id: string) => {
-  const token = cookie.get('token');
   try {
-    const response = await axios.get(`${BASE_URL}/navers/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+    const response = await api.get(`/navers/${id}`);
     return response.data;
   } catch (error) {
     return Log.doLogOut();
@@ -37,16 +44,15 @@ export const getUniqueNaver = async (id: string) => {
 };
 
 export const CreateNaver = async (naver: I.Naver) => {
-  const token = cookie.get('token');
   try {
-    await axios.post(`${BASE_URL}/navers`, {
+    await api.post('/navers', {
       name: naver.name,
       birthdate: convert_date_to_brazilian_format(naver.birthdate),
       project: naver.project,
       job_role: naver.job_role,
       admission_date: convert_date_to_brazilian_format(naver.admission_date),
       url: naver.url,
-    }, { headers: { Authorization: `Bearer ${token}` } });
+    });
 
     return true;
   } catch (error) {
@@ -55,16 +61,15 @@ export const CreateNaver = async (naver: I.Naver) => {
 };
 
 export const updateNaver = async (naver: I.Naver, id: string) => {
-  const token = cookie.get('token');
   try {
-    await axios.put(`${BASE_URL}/navers/${id}`, {
+    await api.put(`/navers/${id}`, {
       name: naver.name,
       birthdate: convert_date_to_brazilian_format(naver.birthdate),
       project: naver.project,
       job_role: naver.job_role,
       admission_date: convert_date_to_brazilian_format(naver.admission_date),
       url: naver.url,
-    }, { headers: { Authorization: `Bearer ${token}` } });
+    });
 
     return true;
   } catch (error) {
@@ -73,11 +78,8 @@ export const updateNaver = async (naver: I.Naver, id: string) => {
 };
 
 export const deleteNaver = async (id: string) => {
-  const token = cookie.get('token');
   try {
-    await axios.delete(`${BASE_URL}/navers/${id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    await api.delete(`/navers/${id}`);
     return true;
   } catch (error) {
     return Log.doLogOut();
